@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +18,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     NgbModule,
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AppRoutingModule
   ],
   providers: [],
