@@ -6,3 +6,11 @@ export interface PeopleOrientation {
     }[];
     answers?: string[];
 }
+
+export function to_people_orientation(json: JSON): PeopleOrientation {
+    return {
+        id: json['id'],
+        options: json['data']['options'],
+        answers: json['data']['answers']
+    };
+}

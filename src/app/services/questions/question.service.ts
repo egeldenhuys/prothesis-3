@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { Priorities } from '../../models/priorities.model';
+import { Priorities, to_priority } from '../../models/priorities.model';
 import { GenericQuestion, to_generic_question } from '../../models/generic_question.model';
-import { PeopleOrientation } from '../../models/people_orientation.model';
-import { Roles } from '../../models/roles.model';
+import { PeopleOrientation, to_people_orientation } from '../../models/people_orientation.model';
+import { Roles, to_role } from '../../models/roles.model';
 
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -37,15 +37,15 @@ export class QuestionService {
             break;
           }
           case 'priorities': {
-            this.priorities.push(x);
+            this.priorities.push(to_priority(x));
             break;
           }
           case 'roles': {
-            this.roles.push(x);
+            this.roles.push(to_role(x));
             break;
           }
           case 'people_orientation': {
-            this.people_orientations.push(x);
+            this.people_orientations.push(to_people_orientation(x));
             break;
           }
           case 'people_id': {
@@ -56,8 +56,6 @@ export class QuestionService {
             break;
         }
       }
-
-      console.log(this.dreams);
     }
   }
 }

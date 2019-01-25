@@ -6,3 +6,11 @@ export interface Roles {
     }[];
     answers?: string[];
 }
+
+export function to_role(json: JSON): Roles {
+    return {
+        id: json['id'],
+        options: json['data']['options'],
+        answers: json['data']['answers']
+    };
+}
