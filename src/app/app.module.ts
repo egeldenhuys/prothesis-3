@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoginComponent } from './pages/login/login.component';
 
@@ -24,6 +25,7 @@ import { DreamsComponent } from './pages/dreams/dreams.component';
     NgbModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFirestoreModule,
     AppRoutingModule
   ],
