@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { QuestionService } from './services/questions/question.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prothesis3';
+  constructor(qs: QuestionService){
+    qs.getQuestions();
+  }
 }
