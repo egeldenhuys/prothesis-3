@@ -8,7 +8,5 @@ import { QuestionService } from './services/questions/question.service';
 })
 export class AppComponent {
   title = 'prothesis3';
-  constructor(qs: QuestionService) {
-    qs.getQuestions();
-  }
+  constructor(qs: QuestionService) {}
 }
