@@ -14,12 +14,12 @@ export class QuestionService {
   constructor(private db: AngularFirestore) { }
   private data: any = null;
 
-  private dreams: GenericQuestion[] = [];
-  private passions: GenericQuestion[] = [];
-  private priorities: Priorities[] = [];
-  private roles: Roles[] = [];
-  private people_orientations: PeopleOrientation[] = [];
-  private people_id: GenericQuestion[] = [];
+  public dreams: GenericQuestion[] = [];
+  public passions: GenericQuestion[] = [];
+  public priorities: Priorities[] = [];
+  public roles: Roles[] = [];
+  public people_orientations: PeopleOrientation[] = [];
+  public people_id: GenericQuestion[] = [];
 
 
   public async getQuestions() {
