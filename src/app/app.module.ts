@@ -11,10 +11,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoginComponent } from './pages/login/login.component';
 
+import { DreamsComponent } from './pages/dreams/dreams.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DreamsComponent
   ],
   imports: [
     NgbModule,
