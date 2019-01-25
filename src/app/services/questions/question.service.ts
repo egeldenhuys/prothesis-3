@@ -24,8 +24,18 @@ export class QuestionService {
 
   public async getQuestions() {
     if (this.data === null) {
+      this.data = {};
+
+      this.dreams = [];
+      this.passions = [];
+      this.priorities = [];
+      this.roles = [];
+      this.people_orientations = [];
+      this.people_id = [];
+
       const tmp = await this.db.collection('static').doc('questions').get().toPromise();
       this.data = tmp.get('data'); // We now have a json blob with all of the data.
+
       for (const x of this.data) {
         switch (x['tag']) {
           case 'dreams': {
