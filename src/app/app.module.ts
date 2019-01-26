@@ -9,17 +9,19 @@ import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { LoginComponent } from './pages/login/login.component';
 
 import { DreamsComponent } from './pages/dreams/dreams.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DreamsComponent
+    DreamsComponent,
+    HomeComponent
   ],
   imports: [
     NgbModule,
@@ -29,7 +31,7 @@ import { DreamsComponent } from './pages/dreams/dreams.component';
     AngularFirestoreModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
