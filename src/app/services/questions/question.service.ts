@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { Priorities, to_priority } from '../../models/priorities.model';
-import { GenericQuestion, to_generic_question } from '../../models/generic_question.model';
-import { PeopleOrientation, to_people_orientation } from '../../models/people_orientation.model';
-import { Roles, to_role } from '../../models/roles.model';
+import { Priorities, toPriority } from '../../models/priorities.model';
+import { GenericQuestion, toGenericQuestion } from '../../models/generic_question.model';
+import { PeopleOrientation, toPeopleOrientation } from '../../models/people_orientation.model';
+import { Roles, toRole } from '../../models/roles.model';
 
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -39,27 +39,27 @@ export class QuestionService {
       for (const x of this.data) {
         switch (x['tag']) {
           case 'dreams': {
-            this.dreams.push(to_generic_question(x));
+            this.dreams.push(toGenericQuestion(x));
             break;
           }
           case 'passions': {
-            this.passions.push(to_generic_question(x));
+            this.passions.push(toGenericQuestion(x));
             break;
           }
           case 'priorities': {
-            this.priorities.push(to_priority(x));
+            this.priorities.push(toPriority(x));
             break;
           }
           case 'roles': {
-            this.roles.push(to_role(x));
+            this.roles.push(toRole(x));
             break;
           }
           case 'people_orientation': {
-            this.people_orientations.push(to_people_orientation(x));
+            this.people_orientations.push(toPeopleOrientation(x));
             break;
           }
           case 'people_id': {
-            this.people_id.push(to_generic_question(x));
+            this.people_id.push(toGenericQuestion(x));
             break;
           }
           default:

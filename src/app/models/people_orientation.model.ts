@@ -1,5 +1,6 @@
 export interface PeopleOrientation {
     id: string;
+    tag: string;
     options: {
         description: string;
         tooltip: string;
@@ -7,10 +8,17 @@ export interface PeopleOrientation {
     answers?: string[];
 }
 
-export function to_people_orientation(json: JSON): PeopleOrientation {
+export function toPeopleOrientation(json: JSON): PeopleOrientation {
     return {
         id: json['id'],
+        tag: json['tag'],
         options: json['data']['options'],
         answers: json['data']['answers']
     };
+}
+
+export function toAnswer(po: PeopleOrientation): any {
+    const obj = po;
+    delete obj['options'];
+    return obj;
 }

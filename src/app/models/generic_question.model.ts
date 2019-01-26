@@ -1,13 +1,21 @@
 export interface GenericQuestion {
     id: string;
+    tag: string;
     question: string;
     answer?: string;
 }
 
-export function to_generic_question(json: JSON): GenericQuestion {
+export function toGenericQuestion(json: JSON): GenericQuestion {
     return {
         id: json['id'],
+        tag: json['tag'],
         question: json['data']['question'],
         answer: json['data']['answer']
     };
+}
+
+export function toAnswer(po: GenericQuestion): any {
+    const obj = po;
+    delete obj['question'];
+    return obj;
 }

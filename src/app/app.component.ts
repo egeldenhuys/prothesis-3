@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { QuestionService } from './services/questions/question.service';
+import { UserService } from './services/user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,7 @@ import { QuestionService } from './services/questions/question.service';
 })
 export class AppComponent {
   title = 'prothesis3';
-  constructor(qs: QuestionService) {}
+  constructor(qs: QuestionService, us: UserService) {
+
+  }
 }
