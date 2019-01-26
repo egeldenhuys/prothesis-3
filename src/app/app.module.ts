@@ -9,25 +9,31 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { LoginComponent } from './pages/login/login.component';
 
 import { DreamsComponent } from './pages/dreams/dreams.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DreamsComponent
+    LoginComponent,
+    DreamsComponent,
+    HomeComponent
   ],
   imports: [
     NgbModule,
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFirestoreModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
