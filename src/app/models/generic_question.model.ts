@@ -21,5 +21,6 @@ export function toGenericQuestion(json: JSON): GenericQuestion {
 export function toAnswer(po: GenericQuestion): any {
     const obj = {...po};
     delete obj['question'];
+    delete obj['id'];
     return obj;
 }

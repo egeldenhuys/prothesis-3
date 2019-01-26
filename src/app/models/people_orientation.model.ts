@@ -24,5 +24,6 @@ export function toPeopleOrientation(json: JSON): PeopleOrientation {
 export function toAnswer(po: PeopleOrientation): any {
     const obj = {...po};
     delete obj['options'];
+    delete obj['id'];
     return obj;
 }

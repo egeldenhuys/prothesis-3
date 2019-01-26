@@ -20,5 +20,6 @@ export function toPriority(json: JSON): Priorities {
 export function toAnswer(po: Priorities): any {
     const obj = {...po};
     delete obj['options'];
+    delete obj['id'];
     return obj;
 }

@@ -25,5 +25,6 @@ export function toRole(json: JSON): Roles {
 export function toAnswer(po: Roles): any {
     const obj = {...po};
     delete obj['options'];
+    delete obj['id'];
     return obj;
 }
