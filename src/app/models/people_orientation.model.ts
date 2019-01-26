@@ -9,6 +9,10 @@ export interface PeopleOrientation {
 }
 
 export function toPeopleOrientation(json: JSON): PeopleOrientation {
+    if (!json['data']['answers']) {
+        json['data']['answers'] = [];
+    }
+
     return {
         id: json['id'],
         tag: json['tag'],
@@ -18,7 +22,7 @@ export function toPeopleOrientation(json: JSON): PeopleOrientation {
 }
 
 export function toAnswer(po: PeopleOrientation): any {
-    const obj = po;
+    const obj = {...po};
     delete obj['options'];
     return obj;
 }

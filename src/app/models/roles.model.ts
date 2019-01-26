@@ -9,6 +9,10 @@ export interface Roles {
 }
 
 export function toRole(json: JSON): Roles {
+    if (!json['data']['answers']) {
+        json['data']['answers'] = [];
+    }
+
     return {
         id: json['id'],
         tag: json['tag'],
@@ -19,7 +23,7 @@ export function toRole(json: JSON): Roles {
 
 
 export function toAnswer(po: Roles): any {
-    const obj = po;
+    const obj = {...po};
     delete obj['options'];
     return obj;
 }

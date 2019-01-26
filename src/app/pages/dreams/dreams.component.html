@@ -1,5 +1,7 @@
 <h2>Dreams</h2>
 <div class="form-group" *ngFor="let dream of qs.dreams">
   <label for="usr">{{ dream.question }}</label>
-  <input type="text" class="form-control" id="usr" value="{{ dream.answer }}">
+  <input [(ngModel)]='dream.answer' type="text" class="form-control" id="usr" value="{{ dream.answer }}">
 </div>
+
+<button (click)='this.test()'>Click</button>

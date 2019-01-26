@@ -6,6 +6,10 @@ export interface GenericQuestion {
 }
 
 export function toGenericQuestion(json: JSON): GenericQuestion {
+    if (!json['data']['answer']) {
+        json['data']['answer'] = '';
+    }
+
     return {
         id: json['id'],
         tag: json['tag'],
@@ -15,7 +19,7 @@ export function toGenericQuestion(json: JSON): GenericQuestion {
 }
 
 export function toAnswer(po: GenericQuestion): any {
-    const obj = po;
+    const obj = {...po};
     delete obj['question'];
     return obj;
 }
