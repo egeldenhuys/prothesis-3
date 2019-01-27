@@ -1,7 +1,9 @@
 <h2>Dreams</h2>
 <div class="form-group" *ngFor="let dream of qs.dreams">
   <label for="usr">{{ dream.question }}</label>
-  <input [(ngModel)]='dream.answer' type="text" class="form-control" id="usr" value="{{ dream.answer }}">
+  <input [(ngModel)]='dream.answer' type="text" class="form-control" id="usr" value="{{ dream.answer }}" (focusout)='this.update(dream)'>
 </div>
 
-<button (click)='this.test()'>Click</button>
+<br>
+<button type="button" class="btn btn-primary btn-lg btn-block" (click)='this.save()'>Save Changes</button>
+
