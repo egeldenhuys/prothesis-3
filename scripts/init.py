@@ -2,6 +2,9 @@
 
 # https://firebase.google.com/docs/firestore/quickstart
 
+# This script reads questions from `questions.json` and uploads them to firebase in the below format.
+# Place credentials in `serviceAccount.json`
+
 """
 INPUT:
 
